@@ -5,72 +5,104 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Epoch — Soporte</title>
-  <meta name="description" content="Soporte oficial de Epoch para iPhone. Ayuda, preguntas frecuentes, privacidad y contacto.">
+
+  <meta
+    name="description"
+    content="Soporte oficial de Epoch para iPhone. Ayuda, preguntas frecuentes, privacidad y contacto."
+  >
+
+  <meta name="robots" content="index, follow">
 
   <style>
     :root {
-      color-scheme: light dark;
+      color-scheme: dark;
+
       --bg: #0d0d0f;
-      --card: #17171a;
+      --surface: #17171a;
+      --surface-hover: #202024;
       --text: #f5f5f7;
       --secondary: #a1a1aa;
       --border: #29292e;
-      --accent: #ffffff;
+      --button-bg: #f5f5f7;
+      --button-text: #111113;
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
-                   "SF Pro Text", Helvetica, Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "SF Pro Text",
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
     main {
       width: min(720px, calc(100% - 40px));
       margin: 0 auto;
-      padding: 80px 0;
+      padding: 72px 0 48px;
     }
 
     .logo {
-      width: 56px;
-      height: 56px;
-      border: 1px solid var(--border);
-      border-radius: 15px;
+      width: 58px;
+      height: 58px;
+
       display: grid;
       place-items: center;
+
+      border: 1px solid var(--border);
+      border-radius: 16px;
+
+      font-size: 26px;
+
       margin-bottom: 28px;
-      font-size: 25px;
     }
 
     h1 {
-      margin: 0 0 8px;
-      font-size: clamp(38px, 7vw, 58px);
-      letter-spacing: -0.045em;
-      line-height: 1;
+      margin: 0;
+
+      font-size: clamp(42px, 8vw, 64px);
+      line-height: 0.98;
+
+      letter-spacing: -0.05em;
     }
 
     .subtitle {
-      margin: 0 0 52px;
+      margin: 14px 0 52px;
+
       color: var(--secondary);
       font-size: 19px;
     }
 
     section {
-      padding: 28px 0;
+      padding: 32px 0;
       border-top: 1px solid var(--border);
     }
 
     h2 {
       margin: 0 0 14px;
-      font-size: 22px;
-      letter-spacing: -0.02em;
+
+      font-size: 23px;
+      line-height: 1.2;
+
+      letter-spacing: -0.025em;
     }
 
     p {
@@ -83,65 +115,150 @@
     }
 
     .button {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
       margin-top: 8px;
-      padding: 12px 17px;
-      background: var(--accent);
-      color: #111;
-      text-decoration: none;
+      padding: 12px 18px;
+
+      background: var(--button-bg);
+      color: var(--button-text);
+
       border-radius: 12px;
-      font-weight: 600;
+
+      text-decoration: none;
+      font-weight: 650;
+
+      transition:
+        transform 0.15s ease,
+        opacity 0.15s ease;
+    }
+
+    .button:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
     }
 
     .faq {
-      margin-top: 22px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
     }
 
     .faq strong {
       display: block;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
+
       color: var(--text);
+      font-size: 16px;
+    }
+
+    .faq p {
+      margin: 0;
+    }
+
+    .privacy-link {
+      display: inline-block;
+      margin-top: 4px;
+
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .privacy-link:hover {
+      text-decoration: underline;
     }
 
     footer {
-      padding-top: 36px;
+      margin-top: 10px;
+      padding: 30px 0 10px;
+
+      border-top: 1px solid var(--border);
+
       color: var(--secondary);
       font-size: 14px;
     }
 
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+
+      margin-top: 8px;
+    }
+
     footer a {
       color: var(--secondary);
-      margin-right: 18px;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--text);
+    }
+
+    @media (max-width: 600px) {
+      main {
+        width: min(100% - 32px, 720px);
+        padding-top: 48px;
+      }
+
+      section {
+        padding: 28px 0;
+      }
     }
   </style>
 </head>
 
 <body>
+
   <main>
 
-    <div class="logo">⏳</div>
+    <div class="logo" aria-hidden="true">⏳</div>
 
     <h1>Epoch</h1>
-    <p class="subtitle">Cuenta lo vivido. Espera lo que viene.</p>
+
+    <p class="subtitle">
+      Cuenta lo vivido. Espera lo que viene.
+    </p>
+
 
     <section>
       <h2>¿Necesitas ayuda?</h2>
 
       <p>
         Si has encontrado un problema, tienes alguna duda o simplemente
-        quieres contarnos una idea para mejorar Epoch, escríbenos.
+        quieres proponernos una idea para mejorar Epoch, escríbenos.
       </p>
 
-      <a class="button" href="hombrechichagames@gmail.com">
+      <a
+        class="button"
+        href="mailto:hombrechichagames@gmail.com?subject=Soporte%20Epoch"
+      >
         Contactar con soporte
       </a>
     </section>
+
 
     <section>
       <h2>Preguntas frecuentes</h2>
 
       <div class="faq">
-        <strong>¿Epoch necesita una cuenta?</strong>
+        <strong>¿Qué es Epoch?</strong>
+
+        <p>
+          Epoch es un contador de días para saber cuánto tiempo ha pasado
+          desde una fecha o cuánto falta para un momento que estás esperando.
+        </p>
+      </div>
+
+      <div class="faq">
+        <strong>¿Necesito crear una cuenta?</strong>
+
         <p>
           No. Puedes utilizar Epoch sin crear una cuenta de usuario.
         </p>
@@ -149,53 +266,87 @@
 
       <div class="faq">
         <strong>¿Epoch Pro es una suscripción?</strong>
+
         <p>
           No. Epoch Pro se desbloquea mediante una única compra.
+          No hay cuotas mensuales ni anuales.
         </p>
       </div>
 
       <div class="faq">
         <strong>¿Dónde se guardan mis datos?</strong>
+
         <p>
-          Tus registros se guardan en tu dispositivo. Si activas la
-          sincronización de Epoch Pro, también pueden sincronizarse
-          mediante tu iCloud privado.
+          Tus registros se guardan en tu dispositivo. Si utilizas
+          la sincronización de Epoch Pro, también pueden sincronizarse
+          mediante tu cuenta privada de iCloud.
         </p>
       </div>
 
       <div class="faq">
-        <strong>¿Cómo puedo restaurar Epoch Pro?</strong>
+        <strong>¿Cómo restauro Epoch Pro?</strong>
+
         <p>
-          Puedes restaurar tus compras desde los ajustes de Epoch usando
-          el mismo Apple ID con el que realizaste la compra.
+          Puedes restaurar tu compra desde los ajustes de Epoch utilizando
+          el mismo Apple ID con el que realizaste la compra original.
         </p>
       </div>
 
       <div class="faq">
         <strong>¿Epoch tiene anuncios?</strong>
+
         <p>
           No. Epoch no incluye publicidad.
         </p>
       </div>
+
+      <div class="faq">
+        <strong>¿Cómo puedo dejar de recibir notificaciones?</strong>
+
+        <p>
+          Puedes modificar los permisos de notificaciones de Epoch
+          en Ajustes de iOS cuando quieras.
+        </p>
+      </div>
     </section>
+
 
     <section>
       <h2>Privacidad</h2>
+
       <p>
-        Epoch está diseñada para funcionar sin cuentas de usuario ni
-        publicidad. Puedes consultar todos los detalles en nuestra
-        política de privacidad.
+        Epoch está diseñada para funcionar sin cuentas de usuario
+        ni publicidad y utiliza únicamente los permisos necesarios
+        para las funciones que tú decides activar.
       </p>
 
-      <a href="privacy.html">Ver política de privacidad →</a>
+      <a class="privacy-link" href="privacy.html">
+        Ver política de privacidad →
+      </a>
     </section>
 
+
     <footer>
+
       <p>© 2026 Epoch</p>
-      <a href="privacy.html">Privacidad</a>
-      <a href="hombrechichagames@gmail.com">Contacto</a>
+
+      <div class="footer-links">
+
+        <a href="privacy.html">
+          Privacidad
+        </a>
+
+        <a
+          href="mailto:hombrechichagames@gmail.com?subject=Contacto%20Epoch"
+        >
+          Contacto
+        </a>
+
+      </div>
+
     </footer>
 
   </main>
+
 </body>
 </html>
