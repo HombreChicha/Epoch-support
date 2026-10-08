@@ -1,380 +1,597 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Epoch — Política de privacidad</title>
+    <title>Política de privacidad · Epoch</title>
 
-  <meta
-    name="description"
-    content="Política de privacidad de Epoch para iPhone."
-  >
+    <meta
+        name="description"
+        content="Política de privacidad de Epoch, contador de días para iPhone."
+    >
 
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #0d0d0f;
-      --text: #f5f5f7;
-      --secondary: #a1a1aa;
-      --border: #29292e;
-    }
+    <style>
+        :root {
+            color-scheme: dark;
+            --background: #000000;
+            --surface: #151515;
+            --surface-secondary: #1f1f1f;
+            --text: #ffffff;
+            --secondary: #a8a8a8;
+            --border: #303030;
+            --accent: #ffffff;
+        }
 
-    * {
-      box-sizing: border-box;
-    }
+        * {
+            box-sizing: border-box;
+        }
 
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "SF Pro Text",
-        "Helvetica Neue",
-        Helvetica,
-        Arial,
-        sans-serif;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
+        body {
+            margin: 0;
+            background: var(--background);
+            color: var(--text);
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "SF Pro Display",
+                "SF Pro Text",
+                "Helvetica Neue",
+                Arial,
+                sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
 
-    main {
-      width: min(760px, calc(100% - 40px));
-      margin: 0 auto;
-      padding: 64px 0 48px;
-    }
+        .container {
+            width: min(760px, calc(100% - 40px));
+            margin: 0 auto;
+            padding: 72px 0 80px;
+        }
 
-    a {
-      color: var(--text);
-    }
+        .back {
+            display: inline-block;
+            margin-bottom: 48px;
+            color: var(--secondary);
+            text-decoration: none;
+            font-size: 15px;
+        }
 
-    .back {
-      display: inline-block;
-      margin-bottom: 40px;
-      color: var(--secondary);
-      text-decoration: none;
-    }
+        .back:hover {
+            color: var(--text);
+        }
 
-    h1 {
-      margin: 0;
-      font-size: clamp(38px, 7vw, 56px);
-      line-height: 1.02;
-      letter-spacing: -0.045em;
-    }
+        .eyebrow {
+            margin: 0 0 12px;
+            color: var(--secondary);
+            font-size: 15px;
+            font-weight: 600;
+        }
 
-    .updated {
-      margin: 14px 0 48px;
-      color: var(--secondary);
-    }
+        h1 {
+            margin: 0;
+            font-size: clamp(40px, 8vw, 64px);
+            line-height: 0.98;
+            letter-spacing: -0.045em;
+        }
 
-    section {
-      padding: 30px 0;
-      border-top: 1px solid var(--border);
-    }
+        .updated {
+            margin: 20px 0 0;
+            color: var(--secondary);
+            font-size: 15px;
+        }
 
-    h2 {
-      margin: 0 0 14px;
-      font-size: 22px;
-      line-height: 1.25;
-      letter-spacing: -0.02em;
-    }
+        .intro {
+            margin: 48px 0 0;
+            font-size: 22px;
+            line-height: 1.45;
+            letter-spacing: -0.02em;
+        }
 
-    p {
-      margin: 0 0 14px;
-      color: var(--secondary);
-    }
+        .section {
+            margin-top: 56px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+        }
 
-    ul {
-      margin: 12px 0 14px;
-      padding-left: 22px;
-      color: var(--secondary);
-    }
+        h2 {
+            margin: 0 0 18px;
+            font-size: 26px;
+            letter-spacing: -0.025em;
+        }
 
-    li {
-      margin-bottom: 8px;
-    }
+        p,
+        li {
+            color: var(--secondary);
+            font-size: 17px;
+            line-height: 1.65;
+        }
 
-    footer {
-      margin-top: 16px;
-      padding-top: 30px;
-      border-top: 1px solid var(--border);
-      color: var(--secondary);
-      font-size: 14px;
-    }
+        p {
+            margin: 0 0 18px;
+        }
 
-    @media (max-width: 600px) {
-      main {
-        width: min(100% - 32px, 760px);
-        padding-top: 44px;
-      }
-    }
-  </style>
+        ul {
+            margin: 18px 0;
+            padding-left: 24px;
+        }
+
+        li + li {
+            margin-top: 8px;
+        }
+
+        strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--text);
+        }
+
+        .highlight {
+            margin-top: 24px;
+            padding: 24px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+        }
+
+        .highlight p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            margin-top: 72px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            color: var(--secondary);
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: var(--secondary);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: min(100% - 30px, 760px);
+                padding-top: 44px;
+            }
+
+            .intro {
+                font-size: 20px;
+            }
+
+            .section {
+                margin-top: 44px;
+                padding-top: 32px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <main>
+    <main class="container">
 
-    <a class="back" href="./">
-      ← Volver a soporte
-    </a>
+        <a class="back" href="index.html">← Volver a soporte</a>
 
-    <h1>Política de privacidad</h1>
+        <p class="eyebrow">Epoch</p>
 
-    <p class="updated">
-      Última actualización: 6 de octubre de 2026
-    </p>
+        <h1>Política de privacidad</h1>
 
-    <section>
-      <h2>Tu privacidad importa</h2>
+        <p class="updated">
+            Última actualización: 8 de octubre de 2026
+        </p>
 
-      <p>
-        Epoch está diseñada para ayudarte a contar los días que han pasado
-        y los que quedan sin necesidad de crear una cuenta de usuario,
-        mostrar publicidad ni utilizar tus datos con fines publicitarios.
-      </p>
+        <p class="intro">
+            Epoch está diseñada para que puedas contar lo que has vivido
+            y lo que está por llegar sin necesidad de crear una cuenta.
+            Tus registros personales no se utilizan con fines publicitarios
+            ni se venden a terceros.
+        </p>
 
-      <p>
-        Esta política explica qué información puede utilizar Epoch
-        y para qué se utiliza.
-      </p>
-    </section>
 
-    <section>
-      <h2>Información que introduces en Epoch</h2>
+        <section class="section">
 
-      <p>
-        Al utilizar Epoch puedes crear registros que incluyan información
-        como nombres, fechas, categorías, precios y otros datos relacionados
-        con tus contadores.
-      </p>
+            <h2>1. Datos que guardas en Epoch</h2>
 
-      <p>
-        Esta información se utiliza únicamente para proporcionar las
-        funciones de la aplicación.
-      </p>
-    </section>
+            <p>
+                Epoch permite crear registros relacionados con fechas,
+                cuentas atrás y otros momentos personales.
+            </p>
 
-    <section>
-      <h2>Almacenamiento de los datos</h2>
+            <p>
+                Dependiendo de cómo utilices la aplicación, estos registros
+                pueden contener información como:
+            </p>
 
-      <p>
-        Los registros de Epoch se almacenan en tu dispositivo.
-      </p>
+            <ul>
+                <li>Nombres de registros.</li>
+                <li>Fechas.</li>
+                <li>Notas.</li>
+                <li>Fotografías seleccionadas por el usuario.</li>
+                <li>Categorías.</li>
+                <li>Precios asociados a determinados registros.</li>
+                <li>Eventos importados desde Calendario.</li>
+            </ul>
 
-      <p>
-        Epoch no requiere una cuenta propia para utilizar la aplicación.
-      </p>
-    </section>
+            <div class="highlight">
+                <p>
+                    <strong>
+                        Este contenido personal no se envía a Firebase Analytics
+                        ni a Firebase Crashlytics.
+                    </strong>
+                </p>
 
-    <section>
-      <h2>iCloud</h2>
+                <p>
+                    Epoch no utiliza el contenido de tus registros para
+                    publicidad, perfiles comerciales o seguimiento entre
+                    aplicaciones.
+                </p>
+            </div>
 
-      <p>
-        Si utilizas las funciones de sincronización con iCloud disponibles
-        en Epoch, determinados datos de la aplicación pueden almacenarse
-        y sincronizarse mediante tu cuenta privada de iCloud.
-      </p>
+        </section>
 
-      <p>
-        iCloud es un servicio proporcionado por Apple y su funcionamiento
-        está sujeto a los términos y políticas de privacidad de Apple.
-      </p>
-    </section>
 
-    <section>
-      <h2>Calendario</h2>
+        <section class="section">
 
-      <p>
-        Si decides utilizar las funciones relacionadas con Calendario,
-        Epoch puede solicitar permiso para acceder a determinados eventos.
-      </p>
+            <h2>2. Firebase Analytics</h2>
 
-      <p>
-        Este acceso se utiliza únicamente para ofrecer las funciones que
-        hayas decidido utilizar, como importar o vincular información
-        de un evento con una cuenta atrás.
-      </p>
+            <p>
+                Epoch utiliza <strong>Firebase Analytics</strong>, un servicio
+                proporcionado por Google, para entender de forma general cómo
+                se utiliza la aplicación y mejorar sus funciones.
+            </p>
 
-      <p>
-        Puedes retirar el permiso de acceso al Calendario en cualquier
-        momento desde los ajustes de privacidad de iOS.
-      </p>
-    </section>
+            <p>
+                Analytics puede recopilar información técnica y de uso como:
+            </p>
 
-    <section>
-      <h2>Compras dentro de la app</h2>
+            <ul>
+                <li>Aperturas y sesiones de la aplicación.</li>
+                <li>Interacción con determinadas funciones.</li>
+                <li>Versión de la aplicación.</li>
+                <li>Modelo y características generales del dispositivo.</li>
+                <li>Región geográfica aproximada.</li>
+                <li>Un identificador asociado a la instalación de la aplicación.</li>
+                <li>Eventos relacionados con compras realizadas mediante el App Store.</li>
+            </ul>
 
-      <p>
-        Epoch Pro puede adquirirse mediante el sistema de compras
-        de la App Store.
-      </p>
+            <p>
+                Epoch también registra algunos eventos generales como completar
+                el onboarding, crear un registro, importar un evento del
+                Calendario, abrir la pantalla de Epoch Pro o iniciar y completar
+                una compra.
+            </p>
 
-      <p>
-        Las transacciones son procesadas por Apple. Epoch puede consultar
-        el estado de la compra para determinar si las funciones de
-        Epoch Pro deben estar disponibles.
-      </p>
+            <p>
+                Estos eventos no incluyen el nombre de tus registros,
+                fotografías, notas, fechas concretas, precios introducidos por ti
+                ni nombres de eventos de Calendario.
+            </p>
 
-      <p>
-        Epoch no recibe los datos de tu tarjeta bancaria.
-      </p>
-    </section>
+            <p>
+                Epoch no utiliza Firebase Analytics para publicidad ni para
+                realizar seguimiento del usuario entre aplicaciones o páginas web.
+            </p>
 
-    <section>
-      <h2>Notificaciones</h2>
+        </section>
 
-      <p>
-        Si das permiso para recibir notificaciones, Epoch puede utilizarlas
-        para avisarte de fechas, cuentas atrás o hitos relacionados con
-        los registros que hayas creado.
-      </p>
 
-      <p>
-        Puedes modificar o retirar el permiso de notificaciones
-        en cualquier momento desde Ajustes de iOS.
-      </p>
-    </section>
+        <section class="section">
 
-    <section>
-      <h2>Widgets</h2>
+            <h2>3. Firebase Crashlytics</h2>
 
-      <p>
-        Epoch puede mostrar determinados datos de tus registros mediante
-        widgets de iOS cuando decides utilizarlos.
-      </p>
+            <p>
+                Epoch utiliza <strong>Firebase Crashlytics</strong> para detectar
+                fallos y problemas técnicos de la aplicación.
+            </p>
 
-      <p>
-        Esta información se utiliza exclusivamente para ofrecer
-        la funcionalidad del widget en tus dispositivos.
-      </p>
-    </section>
+            <p>
+                Crashlytics puede recopilar información de diagnóstico como:
+            </p>
 
-    <section>
-      <h2>Publicidad y seguimiento</h2>
+            <ul>
+                <li>Informes de fallos.</li>
+                <li>Errores técnicos no fatales.</li>
+                <li>Versión de Epoch.</li>
+                <li>Número de compilación.</li>
+                <li>Versión del sistema operativo.</li>
+                <li>Información técnica del dispositivo.</li>
+                <li>Idioma o configuración regional.</li>
+                <li>Información relacionada con el estado técnico de la aplicación.</li>
+            </ul>
 
-      <p>
-        Epoch no incluye publicidad.
-      </p>
+            <p>
+                Esta información se utiliza exclusivamente para identificar
+                problemas, mejorar la estabilidad de Epoch y corregir errores.
+            </p>
 
-      <p>
-        Epoch no utiliza tus datos para realizar seguimiento publicitario
-        entre aplicaciones o sitios web.
-      </p>
-    </section>
+        </section>
 
-    <section>
-      <h2>Cuentas de usuario</h2>
 
-      <p>
-        Epoch no necesita que crees una cuenta de usuario propia
-        para utilizar la aplicación.
-      </p>
-    </section>
+        <section class="section">
 
-    <section>
-      <h2>Servicios proporcionados por Apple</h2>
+            <h2>4. Sin cuentas de usuario</h2>
 
-      <p>
-        Algunas funciones de Epoch utilizan servicios integrados en
-        los sistemas de Apple, entre ellos:
-      </p>
+            <p>
+                Epoch no requiere crear una cuenta ni iniciar sesión.
+            </p>
 
-      <ul>
-        <li>iCloud y CloudKit.</li>
-        <li>Calendario.</li>
-        <li>Compras de la App Store mediante StoreKit.</li>
-        <li>Notificaciones de iOS.</li>
-        <li>Widgets de iOS.</li>
-      </ul>
+            <p>
+                No solicitamos tu nombre, dirección de correo electrónico,
+                número de teléfono ni contraseña para utilizar la aplicación.
+            </p>
 
-      <p>
-        El funcionamiento de estos servicios está sujeto a las condiciones
-        y políticas de privacidad aplicables de Apple.
-      </p>
-    </section>
+        </section>
 
-    <section>
-      <h2>Conservación y eliminación de datos</h2>
 
-      <p>
-        Puedes eliminar tus registros desde la propia aplicación.
-      </p>
+        <section class="section">
 
-      <p>
-        Los datos almacenados localmente pueden eliminarse también al
-        eliminar la aplicación y sus datos del dispositivo.
-      </p>
+            <h2>5. iCloud y CloudKit</h2>
 
-      <p>
-        Si utilizas iCloud, determinados datos sincronizados pueden
-        permanecer asociados a tu almacenamiento de iCloud y estarán
-        sujetos a la gestión que Apple proporciona para dicho servicio.
-      </p>
-    </section>
+            <p>
+                Los usuarios de Epoch Pro pueden activar opcionalmente la
+                sincronización mediante iCloud.
+            </p>
 
-    <section>
-      <h2>Datos de soporte</h2>
+            <p>
+                Cuando esta función está activada, los registros pueden
+                sincronizarse utilizando <strong>Apple CloudKit</strong>
+                y la cuenta de iCloud del usuario.
+            </p>
 
-      <p>
-        Si contactas con nosotros por correo electrónico, recibiremos
-        la información que decidas proporcionar voluntariamente, como
-        tu dirección de correo electrónico, el contenido del mensaje
-        y los archivos que decidas adjuntar.
-      </p>
+            <p>
+                La sincronización utiliza el entorno privado de iCloud asociado
+                al usuario. Epoch no utiliza Firebase para almacenar el contenido
+                de tus registros.
+            </p>
 
-      <p>
-        Esta información se utilizará únicamente para atender tu consulta
-        o solicitud de soporte.
-      </p>
-    </section>
+            <p>
+                El uso de iCloud está sujeto a las políticas de privacidad y
+                condiciones de Apple.
+            </p>
 
-    <section>
-      <h2>Venta de información personal</h2>
+        </section>
 
-      <p>
-        Epoch no vende tu información personal.
-      </p>
-    </section>
 
-    <section>
-      <h2>Cambios en esta política</h2>
+        <section class="section">
 
-      <p>
-        Esta política de privacidad puede actualizarse si cambian las
-        funciones de Epoch o la forma en que se tratan los datos.
-      </p>
+            <h2>6. Calendario</h2>
 
-      <p>
-        La fecha de la última actualización aparecerá siempre al principio
-        de esta página.
-      </p>
-    </section>
+            <p>
+                Epoch puede solicitar acceso al Calendario cuando el usuario
+                decide utilizar las funciones relacionadas con la importación
+                de eventos.
+            </p>
 
-    <section>
-      <h2>Contacto</h2>
+            <p>
+                Este permiso es opcional y solo se solicita cuando es necesario
+                para utilizar dicha función.
+            </p>
 
-      <p>
-        Si tienes alguna pregunta sobre esta política o sobre la privacidad
-        en Epoch, puedes escribirnos a:
-      </p>
+            <p>
+                Epoch no envía a Firebase los nombres ni el contenido de los
+                eventos de tu Calendario.
+            </p>
 
-      <p>
-        <a
-          href="mailto:hombrechichagames@gmail.com?subject=Privacidad%20Epoch"
-        >
-          hombrechichagames@gmail.com
-        </a>
-      </p>
-    </section>
+            <p>
+                Puedes modificar o retirar el permiso de Calendario en cualquier
+                momento desde los Ajustes de iOS.
+            </p>
 
-    <footer>
-      © 2026 Epoch
-    </footer>
+        </section>
 
-  </main>
+
+        <section class="section">
+
+            <h2>7. Fotografías</h2>
+
+            <p>
+                Si decides añadir una imagen a un registro, Epoch utiliza
+                únicamente la fotografía que tú seleccionas.
+            </p>
+
+            <p>
+                Las fotografías asociadas a tus registros no se utilizan para
+                publicidad, análisis de comportamiento ni se envían a Firebase
+                Analytics o Firebase Crashlytics.
+            </p>
+
+        </section>
+
+
+        <section class="section">
+
+            <h2>8. Compras dentro de la aplicación</h2>
+
+            <p>
+                Epoch Pro se ofrece como una compra única dentro de la aplicación.
+                No es una suscripción.
+            </p>
+
+            <p>
+                Las compras son procesadas por Apple mediante StoreKit y el
+                App Store. Epoch no recibe ni almacena los datos de pago del usuario.
+            </p>
+
+            <p>
+                Firebase Analytics puede recibir información técnica relacionada
+                con los eventos de compra, utilizada para medir el funcionamiento
+                general de la aplicación.
+            </p>
+
+        </section>
+
+
+        <section class="section">
+
+            <h2>9. Notificaciones</h2>
+
+            <p>
+                Epoch puede utilizar notificaciones para avisarte de hitos,
+                fechas próximas y otros recordatorios relacionados con tus registros.
+            </p>
+
+            <p>
+                Las notificaciones requieren tu autorización y puedes desactivarlas
+                en cualquier momento desde los Ajustes de iOS.
+            </p>
+
+            <p>
+                Epoch no utiliza Firebase Cloud Messaging para enviar estas
+                notificaciones.
+            </p>
+
+        </section>
+
+
+        <section class="section">
+
+            <h2>10. Publicidad y seguimiento</h2>
+
+            <p>
+                Epoch no contiene publicidad.
+            </p>
+
+            <p>
+                No utilizamos tus datos para publicidad personalizada y no
+                compartimos información con redes publicitarias.
+            </p>
+
+            <p>
+                Epoch no utiliza la información recopilada mediante Firebase
+                para realizar seguimiento entre aplicaciones, sitios web o
+                servicios de otras empresas.
+            </p>
+
+        </section>
+
+
+        <section class="section">
+
+            <h2>11. Eliminación de datos</h2>
+
+            <p>
+                Puedes eliminar tus registros directamente desde Epoch.
+            </p>
+
+            <p>
+                Si utilizas la sincronización con iCloud, los cambios realizados
+                sobre tus registros pueden sincronizarse también mediante CloudKit.
+            </p>
+
+            <p>
+                La información técnica recopilada por Firebase Analytics y
+                Firebase Crashlytics está sujeta a las políticas de conservación
+                y tratamiento de datos de Google y Firebase.
+            </p>
+
+        </section>
+
+
+        <section class="section">
+
+            <h2>12. Servicios de terceros</h2>
+
+            <p>
+                Epoch utiliza determinados servicios proporcionados por Apple
+                y Google para ofrecer funciones de la aplicación, procesar compras,
+                sincronizar información y mejorar la estabilidad.
+            </p>
+
+            <p>
+                Puedes consultar información adicional sobre la privacidad de
+                estos proveedores en:
+            </p>
+
+            <ul>
+                <li>
+                    <a
+                        href="https://www.apple.com/legal/privacy/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Política de privacidad de Apple
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://firebase.google.com/support/privacy"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Privacidad y seguridad de Firebase
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://policies.google.com/privacy"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Política de privacidad de Google
+                    </a>
+                </li>
+            </ul>
+
+        </section>
+
+
+        <section class="section">
+
+            <h2>13. Cambios en esta política</h2>
+
+            <p>
+                Esta política de privacidad puede actualizarse cuando cambien
+                las funciones de Epoch, los servicios utilizados o los requisitos
+                legales aplicables.
+            </p>
+
+            <p>
+                La fecha de la última actualización aparecerá siempre al comienzo
+                de esta página.
+            </p>
+
+        </section>
+
+
+        <section class="section">
+
+            <h2>14. Contacto</h2>
+
+            <p>
+                Si tienes alguna pregunta relacionada con la privacidad o con el
+                tratamiento de datos en Epoch, puedes escribir a:
+            </p>
+
+            <p>
+                <a
+                    href="mailto:hombrechichagames@gmail.com?subject=Privacidad%20Epoch"
+                >
+                    hombrechichagames@gmail.com
+                </a>
+            </p>
+
+        </section>
+
+
+        <footer class="footer">
+
+            <p>
+                © 2026 Epoch · Javier Sánchez Estévez
+            </p>
+
+            <p>
+                <a href="index.html">Soporte de Epoch</a>
+            </p>
+
+        </footer>
+
+    </main>
 
 </body>
 </html>
